@@ -112,9 +112,22 @@ namespace PeenFightClient.GUI
 
         private void teleportBtn_Click(object sender, EventArgs e)
         {
-            chromeBrowser.ExecuteScriptAsync($"Client.x = {tpX.Text}");
-            chromeBrowser.ExecuteScriptAsync($"Client.x = {tpY.Text}");
-            //yes, I know. This can be on the same line. I don't care.
+            try
+            {
+                if (tpX.Text == "" || tpY.Text == "")
+                {
+                    MessageBox.Show("Missing X and Y position to teleport to", Application.ProductName);
+                }
+                else
+                {
+                    chromeBrowser.ExecuteScriptAsync($"Client.x = {tpX.Text}");
+                    chromeBrowser.ExecuteScriptAsync($"Client.x = {tpY.Text}");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"There was a problem running teleport javascript, error: {ex.Message}", Application.ProductName);
+            }
         }
     }
 }
