@@ -50,7 +50,7 @@ namespace PeenFightClient.GUI
                 Cef.Initialize(settings);
                 // Create a browser component
                 chromeBrowser = new ChromiumWebBrowser(Link);
-                // Add it to the form and fill it to the form window.
+                // Add it to the form and fill it to the game panel
                 gamePnl.Controls.Add(chromeBrowser);
                 chromeBrowser.Dock = DockStyle.Fill;
             }
