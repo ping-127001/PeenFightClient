@@ -114,6 +114,7 @@ namespace PeenFightClient.GUI
         {
             chromeBrowser.ExecuteScriptAsync($"Client.x = {tpX.Text}");
             chromeBrowser.ExecuteScriptAsync($"Client.x = {tpY.Text}");
+            //yes, I know. This can be on the same line. I don't care.
         }
     }
 }
